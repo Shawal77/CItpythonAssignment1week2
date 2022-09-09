@@ -8,3 +8,6 @@ the following input is supplied to the program:
 ['34', '67', '55', '33', '12', '98']
 ('34', '67', '55', '33', '12', '98')
 '''
+lst = input().split(',')
+print(list(lst))
+print(tuple(lst))

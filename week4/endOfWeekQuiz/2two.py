@@ -14,7 +14,6 @@ def ascending_sort(shuffled_array):
             j+=1
         i+=1
     return shuffled_array
-
 def descending_sort(shuffled_array):
     i=0
     while i < len(shuffled_array):
@@ -28,10 +27,23 @@ def descending_sort(shuffled_array):
         i+=1
     return shuffled_array
 
+def ascending2(sArray):
+    return sorted(sArray,reverse=False)
+def descending2(sArray):
+    return sorted(sArray,reverse=True)
+
+
 def main():
     arraayt=[7,2,5,8,9,7,4,1,25]
     print(ascending_sort(arraayt))
+    print(ascending2(arraayt))
+
     print(descending_sort(arraayt))
+    print(descending2(arraayt))
+
+
 
 if __name__=='__main__':
     main()
+
+

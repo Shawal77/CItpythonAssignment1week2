@@ -10,3 +10,15 @@ If the driver gets more than 12 points, the function
 should print: “License suspended”
 
 '''
+
+def what_speed(speed):
+    if speed<=70:
+        print("Ok")
+    demPoints=0
+    excess=speed-70
+    demPoints=excess//5
+    print(demPoints)
+    if demPoints>12:
+        print("License Suspended")
+
+what_speed(int(input()))

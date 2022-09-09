@@ -9,3 +9,10 @@ separated input sequence is given to the program:
 100,150,180 The output of the program should be:
 18,22,24
 '''
+from math import sqrt
+C=50
+H=30
+D_list=list(map(int,(input("Enter D").split(','))))
+for D in D_list:
+    Q = int(sqrt((2 * C * D)/H))
+    print(Q,end=',')
