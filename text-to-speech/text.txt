@@ -1,0 +1,3 @@
+/usr/lib/python3/dist-packages (from gtts) (1.16.0)
+Installing collected packages: gtts
+Successfully installed gtts-2.2.4
