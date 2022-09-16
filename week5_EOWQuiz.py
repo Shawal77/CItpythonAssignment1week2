@@ -58,7 +58,7 @@ class Customer:
         self.name=customerName
         self.accounts=accounts
     def __str__(self) -> str:
-        return f'This is {self.name} bank customer'
+        return f'This is {self.name} bank customer with {len(self.accounts)} accounts'
     def __repr__(self) -> str:
         return f'Customer{self.name,self.accounts}'
     def addAccount(self,account: BankAccount):
@@ -76,6 +76,8 @@ def main():
         owner='Shawal',
         type='savings'
     )
+    #adding account to customer
+    Shawal.addAccount(accShawal)
     #adding account to bank
     Rt6Bank.addAccount(account=accShawal)
     
