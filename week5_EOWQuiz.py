@@ -1,3 +1,5 @@
+
+
 class BankAccount():
     def __init__(
         self,
@@ -25,7 +27,7 @@ class Transactions:
         self.account = account
         self.amount = amount
         self.type = type
-   
+
 class Bank():
     def __init__(
         self,
@@ -39,8 +41,8 @@ class Bank():
     def __str__(self) -> str:
         return f'This bank is called {self.name}'
     def addAccount(self,account: BankAccount):
-        self.accounts.append(account)    
-        
+        self.accounts.append(account)
+
     def addTransaction(self,tct: Transactions):
         for bAccount in self.accounts:
             if int(bAccount.accountNo) == int(tct.account.accountNo):
@@ -48,12 +50,12 @@ class Bank():
                 print(f'Dear {bAccount.owner}, {tct.amount} was deduced from your account {bAccount.accountNo}.\n your new balance is {bAccount.balance}')
             else: print('Exitted if statement')
         else: print('Exiteed for loop')
-               
+
 class Customer:
     def __init__(
         self,
         customerName: str,
-        accounts: list[BankAccount]        
+        accounts: list[BankAccount]
     ) -> None:
         self.name=customerName
         self.accounts=accounts
@@ -62,8 +64,8 @@ class Customer:
     def __repr__(self) -> str:
         return f'Customer{self.name,self.accounts}'
     def addAccount(self,account: BankAccount):
-        self.accounts.append(account)    
-     
+        self.accounts.append(account)
+
 def main():
     #creating bank
     Rt6Bank=Bank(accounts=[],bankName = 'Rt6')
@@ -80,16 +82,16 @@ def main():
     Shawal.addAccount(accShawal)
     #adding account to bank
     Rt6Bank.addAccount(account=accShawal)
-    
+
     print('\n',Rt6Bank)
     print(repr(Rt6Bank))
-    
+
     print('\n',Shawal)
     print(repr(Shawal))
-    
+
     print('\n',accShawal)
     print(repr(accShawal),'\n')
-    
+
     firstTrans = Transactions(
         account = accShawal,
         amount=1000.25,
@@ -98,14 +100,14 @@ def main():
     print('\n','Before transaction')
     print('\n',accShawal.balance)
     Rt6Bank.addTransaction(firstTrans)
-    
+
     print('After transaction')
     print('\n',accShawal.balance)
-    
+
 if __name__=='__main__':
     main()
 
-    
+
 
 
 
