@@ -4,24 +4,27 @@ from bs4 import BeautifulSoup
 import requests
 
 top_250_movies_url='https://www.imdb.com/chart/top/?ref_=nv_mv_250'
-
+html_data = requests.get(top_250_movies_url)
+soup = BeautifulSoup(html_data,'lxml')
+movies = soup.find_all('tr')
 # open the file in the write mode
 with open('imdb.csv', 'w') as f:
     writer = csv.writer(f)
     header = ['title','year','rating','metascore','votes','gross','director','star actors','runtime','genre','description']
     writer.writerow(header)
-    
-    title = ''
-    year = ''
-    rating = ''
-    metascore = ''
-    votes = ''
-    gross = ''
-    director = ''
-    stars = ''
-    runtime = ''
-    genre = ''
-    description = ''
+    for movie in movies:
+        title = movie.find('td',class_='titleColumn').a.text
+        link= movie.find('td',class_='titleColumn').a['href']
+        year = movie.find('span',class_='secondaryInfo')
+        rating = movie.find('td',class_="ratingColumn imdbRating").strong
+        metascore = ''
+        votes = ''
+        gross = ''
+        director = ''
+        stars = ''
+        runtime = ''
+        genre = ''
+        description = ''
 
     row = [title,year,rating,metascore,votes,gross,director,stars,runtime,genre,description]
     writer.writerow(row)
