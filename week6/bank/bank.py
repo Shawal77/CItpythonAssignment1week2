@@ -152,7 +152,7 @@ class Bank:
     def check_phone(phone_number):
         return re.match(r'^(077|078|076|070|075|074|075)\d{7}$',phone_number)
 
-def main(Bank):
+def main():
     print('Welcome to RT6 Bank')
     print('1.)Create account\n2.) Login\n3.)Exit')
     userinput=input('Enter your choice')
